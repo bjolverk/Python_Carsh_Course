@@ -1,8 +1,8 @@
 """Класс для преставления автомобиля"""
-class Car():
+class Car:  # И так тоже можно!
     """Простая модель автомобиля"""
     def __init__(self, make, model, year):
-        """Инициализирует атрибуты автомобиля"""
+        """Инициализирует атрибуты описания автомобиля."""
         self.make = make
         self.model = model
         self.year = year
@@ -14,23 +14,21 @@ class Car():
         return long_name.title()
 
     def read_odometer(self):
-        """Выводит пробег автомобиля в милях"""
-        print("Эта машина имеет пробег равный {} миль".format(self.odometer_reading))
+        """Выводит текущий пробег машины в милях"""
+        print("Текущий пробег машины составляет {} миль".format(self.odometer_reading))
 
     def update_odometer(self, mileage):
-        """
-        Устанавливает значение одометра
-        При попытке скруток изменений не будет
-        """
+        """Задаёт новое значение одометру, метод снабжён защитой от махинаций"""
         if mileage >= self.odometer_reading:
             self.odometer_reading = mileage
         else:
-            print("Вы не можете скручивать одометр")
+            print("Значение одометра скручивать нельзя!")
 
     def increment_odometer(self, miles):
-        """Увеличивает показания одометра на заданное количество миль"""
-        if miles >= 0:
+        """Увеличивает пробег машины с заданным приращением"""
+        if miles > 0:
             self.odometer_reading += miles
         else:
-            print("Так нельзя")
+            print("Значение одометра скручивать нельзя!")
+
 
