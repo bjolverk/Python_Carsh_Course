@@ -29,26 +29,3 @@ class User():
     def reset_user_attempts(self):
         self.login_attempts = 0
 
-
-class Privileges():
-    """Класс определяет привилегии админа"""
-    def __init__(self):
-        self.privileges = privileges = ["разрешено добавлять сообщения", "разрешено удалять пользователей", "разрешено банить пользователей"]
-
-    def show_privileges(self):
-        for item in self.privileges:
-            print("\t-{}".format(item))
-
-
-class Administrator(User):
-    """Модель алминистратора"""
-    def __init__(self, firstname, lastname, nicname):
-        """Задаёт параметры пользователя"""
-        super().__init__(firstname, lastname, nicname)
-        self.group = 'Administrator'
-        self.plivileges = Privileges()
-
-
-#larin = Administrator("Василий", "Ларин", "Larian")
-#larin.plivileges.show_privileges()
-
